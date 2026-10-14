@@ -1,0 +1,28 @@
+name: "Bolt"
+run-name: "Violet"
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  reef:
+    permissions:
+      pages: write
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: "github-pages"
+      url: ${{ steps.citrine.outputs.page_url }}
+    steps:
+      - name: "gravel"
+        uses: actions/checkout@v4
+      - name: "serval"
+        uses: actions/configure-pages@v6
+      - name: "metal"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./
+      - name: "Mire"
+        id: citrine
+        uses: actions/deploy-pages@v5
